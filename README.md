@@ -173,25 +173,56 @@ Também utilizei **Python**, para elaboração de gráficos e dados estatístico
 ```python
 import pandas as pd
 df = pd.read_csv('C:\\Users\\thalyta\\Downloads\\archive\\dataset_csv.csv', sep=';', encoding='utf-8')
-print(df.head())
+print(df.head(3))
 ```
-             id  filial                cidade   estado  idade sexo  \
-0  453000000000  201405  Campo Limpo Paulista      SP      37    F   
-1  453000000000  201405  Campo Limpo Paulista      SP      37    F   
-2  453000000000  201405  Campo Limpo Paulista      SP      37    F   
-3  453000000000  201405  Campo Limpo Paulista      SP      37    F   
-4  453000000000  201405  Campo Limpo Paulista      SP      37    F   
+| id           | filial | cidade                  | estado | idade | sexo | limite_total | limite_disp | data       | valor | grupo_estabelecimento | cidade_estabelecimento | pais_estabelecimento |
+|--------------|--------|------------------------|--------|-------|------|--------------|-------------|------------|-------|---------------------|-----------------------|--------------------|
+| 453000000000 | 201405 | Campo Limpo Paulista    | SP     | 37    | F    | 4700         | 5605        | 04/12/2019 | 31    | Servico             | Sao Paulo             | BR                 |
+| 453000000000 | 201405 | Campo Limpo Paulista    | SP     | 37    | F    | 4700         | 5343        | 09/11/2019 | 150   | Farmacias           | Santos                | BR                 |
+| 453000000000 | 201405 | Campo Limpo Paulista    | SP     | 37    | F    | 4700         | 2829        | 06/05/2019 | 50    | Servico             | Sao Paulo             | BR                 |
 
-   limite_total  limite_disp        data  valor grupo_estabelecimento  \
-0          4700         5605  04/12/2019     31               Servico   
-1          4700         5343  09/11/2019    150             Farmacias   
-2          4700         2829  06/05/2019     50               Servico   
-3          4700         2547  01/06/2019     54                Online   
-4          4700         2515  01/06/2019     33                Online   
+<br><br>
 
-  cidade_estabelecimento pais_estabelecimento  
-0              Sao Paulo                   BR  
-1                 Santos                   BR  
-2              Sao Paulo                   BR  
-3                 Osasco                   BR  
-4                 Osasco                   BR  
+Realizei uma consulta para visualizar os gastos de acordo com as categorias de estabelecimento:
+```python
+extremos_por_estabelecimento = df.groupby('grupo_estabelecimento')['valor'].agg(['min', 'max']).reset_index()
+print(extremos_por_estabelecimento)
+```
+| grupo_estabelecimento | min  | max   |
+|----------------------|------|-------|
+| Agencia De Tur       | 4    | 3800  |
+| Alug De Carros       | 700  | 700   |
+| Artigos Eletro       | 1    | 10602 |
+| Auto Pecas           | 30   | 3598  |
+| Cia Aereas           | 20   | 14618 |
+
+<details>
+<summary>Ver tabela completa</summary>
+
+| grupo_estabelecimento | min  | max   |
+|----------------------|------|-------|
+| Farmacias            | 5    | 474   |
+| Hosp E Clinica       | 35   | 1400  |
+| Hoteis               | 20   | 10425 |
+| Joalheria            | 150  | 1025  |
+| Loja De Depart       | 7    | 2299  |
+| Mat Construcao       | 10   | 2596  |
+| Moveis E Decor       | 7    | 3405  |
+| Online               | 1    | 8445  |
+| Outros               | 728  | 9909  |
+| Posto De Gas         | 6    | 250   |
+| Restaurante          | 1    | 4947  |
+| Sem Ramo             | 9    | 188   |
+| Servico              | 0    | 4776  |
+| Supermercados        | 2    | 1033  |
+| Varejo               | 2    | 5161  |
+| Vestuario            | 13   | 1818  |
+
+</details>
+
+
+
+<br><br>
+Criei gráficos usando as bibliotecas **Matplotlib** e **Seaborn**:
+
+
