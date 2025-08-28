@@ -382,5 +382,7 @@ for index, row in estatisticas.iterrows():
 - Percebe-se também que a relação entre limite e gasto pode variar bastante dependendo do limite disponível, não havendo um crescimento proporcional direto.
 - Por fim, há uma diferença significativa entre as médias de valores gastos nas faixas etárias de 18–25 e 26–35 anos.
 
+### 📞 Informações de Contato:
 [Meu LinkedIn](https://www.linkedin.com/in/thalyt%C3%A1-finger-linhares-8124b11a2)
-[Meu Email](thahh.finger@gmail.com)
+
+Meu Email: thahh.finger@gmail.com
