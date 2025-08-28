@@ -12,11 +12,7 @@ Este portfólio foi desenvolvido para demonstrar as principais habilidades neces
 - Bibliotecas do Python: Pandas, Matplotlib, Seaborn e Scipy
 -----
 ### 🧹 Extração e Limpeza
-Iniciei o portfólio pela procura de um dataset que fizesse sentido com a análise que queria demonstrar sobre o consumo brasileiro, encontrei no site **Kaggle** o dataset real de mais de 20 clientes e seus gastos em cartão de crédito em um banco brasileiro. Após a busca, comecei a limpeza de dados no **Excel**, utilizando o **Power Query**:
-<br><br>
-<img width="800" height="500" alt="Captura de Tela (6)" src="https://github.com/user-attachments/assets/3342a842-345f-48c6-ba79-479eba9c13c1" />
-<br><br>
-Nessa etapa filtrei informações que não faziam sentido, renomei uma coluna que estava errada, alterei os tipos de colunas para data, moeda, texto, etc. Deixei as cidades com letras maiúsculas iniciais e tirei caracteres especiais. 
+Iniciei o portfólio pela procura de um dataset que fizesse sentido com a análise que queria demonstrar sobre o consumo brasileiro, encontrei no site **Kaggle** o dataset real de mais de 20 clientes e seus gastos em cartão de crédito em um banco brasileiro. Após a busca, comecei a limpeza de dados no **Excel**, utilizando o **Power Query**. Nessa etapa filtrei informações que não faziam sentido, renomei uma coluna que estava errada, alterei os tipos de colunas para data, moeda, texto, etc. Deixei as cidades com letras maiúsculas iniciais e tirei caracteres especiais:
 <br><br>
 <img width="800" height="500" alt="Captura de Tela (6)" src="https://github.com/user-attachments/assets/002f85b4-7b27-4d04-9311-fa748e84a07b" />
 
@@ -34,9 +30,10 @@ Depois, criei uma coluna calendário e relacionei com o dataset:
 <br><br>
 <img width="698" height="430" alt="Captura de Tela (12)" src="https://github.com/user-attachments/assets/67ce7792-83cd-4c33-a544-6e430b5a71b2" />
 <br><br>
-A partir de insishts que tive, contrui um dashboard, utilizando gráficos de barra, cartões, segmentação de dados, treemap, gráfico de linhas e de pizza:
+A partir de insights que tive, contrui um dashboard, utilizando gráficos de barra, cartões, segmentação de dados, treemap, gráfico de linhas e de pizza:
 <br><br>
-<img width="1021" height="490" alt="Captura de Tela (49)" src="https://github.com/user-attachments/assets/d15c3ddf-1ac7-4020-854c-0eaef456a938" />
+<img width="870" height="429" alt="Captura de tela 2025-08-28 132943" src="https://github.com/user-attachments/assets/daa6ab9b-1e5a-4463-b74f-a451a1dfbc11" />
+
 
 ----
 ### 🔍 Consulta
@@ -82,13 +79,13 @@ LIMIT 5;
 ```sql
 SELECT 
     ROUND(AVG(idade)) AS media_idade,
-    MIN(idade) AS idade_min,
-    MAX(idade) AS idade_max,
+    MIN(idade) AS min_idade,
+    MAX(idade) AS max_idade,
     ROUND(AVG(limite_total), 2) AS media_limite_total,
     ROUND(AVG(limite_disp), 2) AS media_limite_disp
 FROM portfolio;
 ```
-| media_idade | idade_min | idade_max | media_limite_total | media_limite_disp |
+| media_idade | min_idade | max_idade | media_limite_total | media_limite_disp |
 |-------------|-----------|-----------|------------------|-----------------|
 | 34          | 20        | 53        | 8727.60          | 6557.14         |
 
@@ -168,11 +165,11 @@ ORDER BY faixa_etaria, sexo;
 
 ---
 ### 📈 Gráficos e Estatística
-Também utilizei **Python**, para elaboração de gráficos e dados estatísticos, usando a ferramenta **Jupyter Notebook**. Importei o csv através da biblioteca do **Pandas**:
+Também utilizei **Python**, para elaboração de gráficos e dados estatísticos, usando a ferramenta **Jupyter Notebook**. Importei o csv através da biblioteca do **Pandas** e consultei as 3 primeiras linhas:
 
 ```python
 import pandas as pd
-df = pd.read_csv('C:\\Users\\thalyta\\Downloads\\archive\\dataset_csv.csv', sep=';', encoding='utf-8')
+df = pd.read_csv('C:\\dataset_csv.csv', sep=';', encoding='utf-8')
 print(df.head(3))
 ```
 | id           | filial | cidade                  | estado | idade | sexo | limite_total | limite_disp | data       | valor | grupo_estabelecimento | cidade_estabelecimento | pais_estabelecimento |
@@ -184,6 +181,7 @@ print(df.head(3))
 <br><br>
 
 Realizei uma consulta para visualizar os gastos de acordo com as categorias de estabelecimento:
+
 ```python
 extremos_por_estabelecimento = df.groupby('grupo_estabelecimento')['valor'].agg(['min', 'max']).reset_index()
 print(extremos_por_estabelecimento)
@@ -220,9 +218,164 @@ print(extremos_por_estabelecimento)
 
 </details>
 
-
-
 <br><br>
 Criei gráficos usando as bibliotecas **Matplotlib** e **Seaborn**:
 
+**Histograma**
+<br>
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+df_clientes = df.groupby('id', as_index=False).agg({'idade':'first'})
+
+sns.histplot(df_clientes['idade'], kde=True)
+plt.ylabel('Quantidade de clientes')
+plt.xlabel('Idades')
+plt.title('Quantidade de clientes por idade')
+plt.show()
+```
+
+<img width="554" height="453" alt="histograma1" src="https://github.com/user-attachments/assets/1122d503-6e15-4bc8-947b-59f33816fa3a" />
+<br><br><br>
+
+**Gráfico de Barras**
+
+<br>
+
+```python
+df_clientes = df.groupby('id', as_index=False).agg({'sexo':'first'})
+
+sns.countplot(x='sexo', data=df_clientes)
+plt.ylabel('Quantidade')
+plt.xlabel('Sexo')
+plt.title('Quantidade de clientes por sexo')
+plt.show()
+```
+
+<img width="576" height="453" alt="grafico1" src="https://github.com/user-attachments/assets/aa395cbb-bdc0-402e-b9b8-61f2c24b34c1" />
+<br><br><br>
+
+```python
+df.groupby('sexo')['idade'].mean().plot(kind='bar')
+plt.xticks(rotation=0) 
+plt.ylabel('Idade')
+plt.xlabel('Sexo')
+plt.title('Média de idade por sexo')
+plt.show()
+```
+
+<img width="563" height="454" alt="grafico2" src="https://github.com/user-attachments/assets/1c77f9d0-dee9-45f3-96c0-dcd779cf9676" />
+<br><br><br>
+
+**Correlação e Gráfico de Dispersão**
+
+<br>
+
+```python
+print("Correlação entre limite total e compras:")
+print(df['limite_total'].corr(df['valor']))
+
+plt.scatter(df['limite_total'], df['valor'])
+plt.xscale('linear')
+plt.ylabel('Compras')
+plt.xlabel('Limite Total')
+plt.title("Correlação entre o limite total e compras")
+plt.show()
+```
+
+<img width="492" height="398" alt="image" src="https://github.com/user-attachments/assets/5a28d9e2-da3a-4b5f-b70b-f4e893777367" />
+<br><br><br>
+
+```python
+gasto_categoria = df.groupby('grupo_estabelecimento')['valor'].sum().sort_values(ascending=False).head(5).reset_index()
+
+sns.barplot(data=gasto_categoria, x='grupo_estabelecimento', y='valor')
+plt.title("Top 5 categorias que mais gastaram")
+plt.ylabel("Valor Gasto")
+plt.xlabel("Categorias")
+plt.show()
+```
+
+<img width="589" height="453" alt="grafico3" src="https://github.com/user-attachments/assets/76489eb7-0f82-42b5-a921-45b7c3aeacd3" />
+<br><br><br>
+
+```python
+ticket_medio = df.groupby(['idade', 'sexo'])['valor'].mean().reset_index()
+
+sns.barplot(data=ticket_medio, x='idade', y='valor', hue='sexo')
+plt.title('Ticket médio por idade e sexo')
+plt.ylabel('Ticket médio')
+plt.xlabel('Idade')
+plt.legend(title='Sexo')
+```
+
+<img width="571" height="454" alt="grafico4" src="https://github.com/user-attachments/assets/077e443c-92fc-4988-9559-e61603bcf31e" />
+<br><br><br>
+
+Fiz cálculos estátisticos com as bibliotecas **Pandas** e **Scipy**:
+
+**Calculando média, desvio padrão e coeficiente de variação de valores por gênero**
+
+```pyhton
+estatisticas = df.groupby('sexo')['valor'].agg(['mean', 'std']).reset_index()
+estatisticas['cv_percent'] = (estatisticas['std'] / estatisticas['mean']) * 100
+
+for index, row in estatisticas.iterrows():
+    print(f"Sexo: {row['sexo']}")
+    print(f"  Média: {row['mean']:.2f}")
+    print(f"  Desvio padrão: {row['std']:.2f}")
+    print(f"  Coeficiente de variação: {row['cv_percent']:.2f}%\n")
+```
+<img width="253" height="138" alt="image" src="https://github.com/user-attachments/assets/69b9f0cb-de68-4119-b4a5-ed87a0eea19c" />
+<br><br><br>
+
+```python
+from scipy import stats
+
+def faixa_idade(idade):
+    if 18 <= idade <= 25:
+        return '18-25'
+    elif 26 <= idade <= 35:
+        return '26-35'
+    else:
+        return 'outros'
+
+df['faixa_etaria'] = df['idade'].apply(faixa_idade)
+
+grupo1 = df[df['faixa_etaria'] == '18-25']['valor']
+grupo2 = df[df['faixa_etaria'] == '26-35']['valor']
+
+t_stat, p_value = stats.ttest_ind(grupo1, grupo2, equal_var=False)
+
+print(f"t-statistic: {t_stat:.4f}")
+print(f"p-value: {p_value:.4f}")
+
+if p_value < 0.05:
+    print("Diferença significativa entre as médias das faixas etárias.")
+else:
+    print("Não há diferença significativa entre as médias das faixas etárias.")
+```
+<img width="386" height="50" alt="image" src="https://github.com/user-attachments/assets/47e717fa-37b4-460d-bdf9-4bbb34922bd0" />
+
+    
+<br><br><br>
+
+**Calculando média e desvio padrão por categorias de estabelecimento**
+```python
+estatisticas2 = df.groupby('grupo_estabelecimento')['valor'].agg(['mean', 'std']).reset_index()
+estatisticas2['cv_percent'] = (estatisticas2['std'] / estatisticas2['mean']) * 100
+
+for index, row in estatisticas.iterrows():
+    print(f"Estabelecimento: {row['grupo_estabelecimento']}")
+    print(f"  Média: {row['mean']:.2f}")
+    print(f"  Desvio padrão: {row['std']:.2f}")
+    print(f"  Coeficiente de variação: {row['cv_percent']:.2f}%\n")
+```
+<img width="242" height="401" alt="image" src="https://github.com/user-attachments/assets/264e7a02-0611-4f6e-89df-c2e9eaca9591" />
+<br><br><br>
+
+
+
+
+    
