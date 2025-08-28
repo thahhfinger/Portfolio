@@ -2,7 +2,7 @@
 ------
 ### Apresentação Pessoal
 Olá, me chamo Thalytá e seja bem-vindo ao meu Portfólio!
-Sou uma jovem profissional em busca de transição para a área de dados, baseado em meus conhecimentos adquiridos com diversos cursos e com meu MBA em AI, Data Science e Big Data, assim como meu Tecnólogo em Marketing. 
+Sou uma jovem profissional em busca de transição para a área de dados, baseado em meus conhecimentos adquiridos com diversos cursos e com meu MBA em AI, Data Science e Big Data, assim como meu Tecnólogo em Marketing. Ao longo dos últimos 4 anos, atuei na área de prevenção à fraude, onde desenvolvi um olhar analítico, curioso e atento aos detalhes. Tive a oportunidade de colaborar com times internacionais, o que fortaleceu minha comunicação e capacidade de adaptação. Venho consolidando minhas habilidades técnicas em SQL, Python, Excel avançado e Power BI, conforme será visto nesse portfólio:
 
 ## Projeto: Análise de gastos em cartão de credito no brasil 
 Este portfólio foi desenvolvido para demonstrar as principais habilidades necessárias para o trabalho de um Analista de Dados. Visando especialmente realizar uma análise baseada nos gastos que o brasileiro tem em cartão de crédito, buscando entender a relação de consumo e idade/gênero/região. 
