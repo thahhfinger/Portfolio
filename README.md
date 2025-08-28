@@ -374,10 +374,10 @@ for index, row in estatisticas.iterrows():
 <br><br><br>
 
 ### ✔️ Conclusões
-- O limite utilizado por gênero é similar, mas, apesar de haver mais registros de clientes mulheres no dataset, os homens possuem limites muito maiores — cerca de 195%. Com o passar da idade, essa diferença se acentua, enquanto os limites das mulheres tendem a se manter quase estagnados.
+- O limite utilizado por gênero é similar, mas, apesar de haver mais registros de clientes mulheres no dataset, os homens possuem limites muito maiores, cerca de 195%. Com o passar da idade, essa diferença se acentua, enquanto os limites das mulheres tendem a se manter quase estagnados.
 - O ticket médio geral é relativamente baixo, um pouco acima de R$100. Porém, o maior ticket, de um cliente homem de 43 anos, é bem superior, chegando a 6 vezes esse valor. Ainda assim, os gastos de ambos os gêneros são bastante irregulares, com os homens apresentando dispersão de até 5 vezes a sua média.
 - Serviços, varejo e restaurantes são os estabelecimentos com maior volume de vendas, mas o ticket médio mais alto aparece em companhias aéreas e agências de turismo, o que faz sentido por serem compras geralmente de maior valor.
 - A média de idade dos clientes gira em torno dos 30 anos e, nessa base, o limite disponível corresponde a aproximadamente 75% do limite total concedido.
-- A cidade com maior volume de compras é, de forma destacada, São Paulo, seguida pelo Rio de Janeiro — possivelmente devido ao tamanho das cidades e ao custo de vida.
+- A cidade com maior volume de compras é, de forma destacada, São Paulo, seguida pelo Rio de Janeiro, possivelmente devido ao tamanho das cidades e ao custo de vida.
 - Percebe-se também que a relação entre limite e gasto pode variar bastante dependendo do limite disponível, não havendo um crescimento proporcional direto.
 - Por fim, há uma diferença significativa entre as médias de valores gastos nas faixas etárias de 18–25 e 26–35 anos.
