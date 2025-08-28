@@ -381,3 +381,6 @@ for index, row in estatisticas.iterrows():
 - A cidade com maior volume de compras é, de forma destacada, São Paulo, seguida pelo Rio de Janeiro, possivelmente devido ao tamanho das cidades e ao custo de vida.
 - Percebe-se também que a relação entre limite e gasto pode variar bastante dependendo do limite disponível, não havendo um crescimento proporcional direto.
 - Por fim, há uma diferença significativa entre as médias de valores gastos nas faixas etárias de 18–25 e 26–35 anos.
+
+[Meu LinkedIn](https://www.linkedin.com/in/thalyt%C3%A1-finger-linhares-8124b11a2)
+[Meu Email](thahh.finger@gmail.com)
