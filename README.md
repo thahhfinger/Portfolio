@@ -1,5 +1,9 @@
 # Portfólio de Análise de Dados 
 ------
+### Apresentação Pessoal
+Olá, me chamo Thalytá e seja bem-vindo ao meu Portfólio!
+Sou uma jovem profissional em busca de transição para a área de dados, baseado em meus conhecimentos adquiridos com diversos cursos e com meu MBA em AI, Data Science e Big Data, assim como meu Tecnólogo em Marketing. 
+
 ## Projeto: Análise de gastos em cartão de credito no brasil 
 Este portfólio foi desenvolvido para demonstrar as principais habilidades necessárias para o trabalho de um Analista de Dados. Visando especialmente realizar uma análise baseada nos gastos que o brasileiro tem em cartão de crédito, buscando entender a relação de consumo e idade/gênero/região. 
 
