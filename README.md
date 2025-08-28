@@ -40,6 +40,7 @@ A partir de insights que tive, contrui um dashboard, utilizando gráficos de bar
 <br><br>
 <img width="870" height="429" alt="Captura de tela 2025-08-28 132943" src="https://github.com/user-attachments/assets/daa6ab9b-1e5a-4463-b74f-a451a1dfbc11" />
 
+[Link do Dashboard](Portfolio.pbix)
 
 ----
 ### 🔍 Consulta
