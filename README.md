@@ -18,7 +18,7 @@ Iniciei o portfólio pela procura de um dataset que fizesse sentido com a análi
 
 ----
 ### 👀 Visualização
-No **Power BI**, criei colunas de limite usado e faixa etária para análise posterior, também utilizando **Power Query**: 
+No **Power BI**, criei colunas de limite usado e faixa etária para análise posterior, utilizando a Linguagem M no **Power Query**: 
 <br><br>
 <img width="800" height="500" alt="Captura de Tela (7)" src="https://github.com/user-attachments/assets/c12476da-cac4-46a0-a48c-a8d000f12e03" />
 <br><br>
@@ -29,6 +29,12 @@ Depois, criei uma coluna calendário e relacionei com o dataset:
 <img width="800" height="500" alt="Captura de Tela (11)" src="https://github.com/user-attachments/assets/b32ab484-7348-4a1f-b034-18db9360abc3" />
 <br><br>
 <img width="698" height="430" alt="Captura de Tela (12)" src="https://github.com/user-attachments/assets/67ce7792-83cd-4c33-a544-6e430b5a71b2" />
+<br><br>
+Realizei medidas com DAX:
+<br><br>
+<img width="361" height="166" alt="image" src="https://github.com/user-attachments/assets/c599b7fc-d2fc-474f-a750-d699cbbcf33c" />
+<br><br>
+<img width="255" height="43" alt="image" src="https://github.com/user-attachments/assets/bf71cc13-e34a-474d-9b01-0f056db05642" />
 <br><br>
 A partir de insights que tive, contrui um dashboard, utilizando gráficos de barra, cartões, segmentação de dados, treemap, gráfico de linhas e de pizza:
 <br><br>
